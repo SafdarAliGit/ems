@@ -4,4 +4,4 @@ OMJ Event Management System
 
 #### License
 
-MIT
+MIT# ems
