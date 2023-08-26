@@ -1,1 +1,1 @@
-OMJ Event Management System
+ems

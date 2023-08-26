@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:member_no",
+ "creation": "2023-08-26 23:01:33.211266",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "member_no",
+  "card_no",
+  "member_name",
+  "father_husband",
+  "khundi",
+  "group",
+  "cnic",
+  "photo",
+  "gender",
+  "column_break_j6lzj",
+  "date_of_birth",
+  "area",
+  "address",
+  "contact_no",
+  "emergency_contact_no",
+  "marital_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "member_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member No",
+   "unique": 1
+  },
+  {
+   "fieldname": "card_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Card No",
+   "unique": 1
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name"
+  },
+  {
+   "fieldname": "father_husband",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Father / Husband Name"
+  },
+  {
+   "fieldname": "khundi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Khundi",
+   "options": "Khundi"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Data",
+   "label": "Group"
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC",
+   "unique": 1
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "--------\nMale\nFemale"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth "
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Link",
+   "label": "Area",
+   "options": "Area"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No"
+  },
+  {
+   "fieldname": "emergency_contact_no",
+   "fieldtype": "Data",
+   "label": "Emergency Contact No"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "--------\nMarried\nUnmarried\nWidow\nDivorce"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Member Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_j6lzj",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-08-26 23:37:27.255275",
+ "modified_by": "Administrator",
+ "module": "ems",
+ "name": "Member Form",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
