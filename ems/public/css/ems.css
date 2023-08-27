@@ -121,3 +121,9 @@ body {
   background-color: #A6EAA6;
   color: black;
 }
+form-control, .form-control:not([type="checkbox"]):not([type="radio"]), select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px !important;
+  background-color: #FFFFFF;
+}
