@@ -25,7 +25,7 @@
    "fieldname": "member_no",
    "fieldtype": "Link",
    "label": "Member No",
-   "options": "Member Form"
+   "options": "Active Voter List"
   },
   {
    "fieldname": "program_registration_no",
@@ -49,7 +49,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-26 23:41:06.704320",
+ "modified": "2023-08-27 14:36:36.218436",
  "modified_by": "Administrator",
  "module": "ems",
  "name": "Program Registration",

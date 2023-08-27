@@ -9,8 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "event",
-  "member_no",
-  "column_break_41yqy",
+  "column_break_bmmue",
+  "card_no",
   "attendance",
   "date_time",
   "amended_from"
@@ -23,21 +23,17 @@
    "options": "Event Form"
   },
   {
-   "fieldname": "member_no",
-   "fieldtype": "Link",
-   "label": "Member No",
-   "options": "Member Form"
-  },
-  {
    "default": "0",
    "fieldname": "attendance",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Attendance"
   },
   {
-   "default": "Today",
+   "default": "Now",
    "fieldname": "date_time",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Date Time"
   },
   {
@@ -45,22 +41,28 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Program Attendance Token",
+   "options": "General Election Token",
    "print_hide": 1,
    "read_only": 1
   },
   {
-   "fieldname": "column_break_41yqy",
+   "fieldname": "card_no",
+   "fieldtype": "Link",
+   "label": "Card No",
+   "options": "Active Voter List"
+  },
+  {
+   "fieldname": "column_break_bmmue",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-26 23:50:17.572345",
+ "modified": "2023-08-27 15:38:51.206993",
  "modified_by": "Administrator",
  "module": "ems",
- "name": "Program Attendance Token",
+ "name": "General Election Token",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

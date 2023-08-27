@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:member_no",
+ "autoname": "field:card_no",
  "creation": "2023-08-26 23:01:33.211266",
  "default_view": "List",
  "doctype": "DocType",
@@ -12,6 +12,7 @@
   "card_no",
   "member_name",
   "father_husband",
+  "grand_father_name",
   "khundi",
   "group",
   "cnic",
@@ -24,7 +25,10 @@
   "contact_no",
   "emergency_contact_no",
   "marital_status",
-  "amended_from"
+  "amended_from",
+  "booth",
+  "page",
+  "vote_no"
  ],
  "fields": [
   {
@@ -32,6 +36,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Member No",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -39,26 +44,30 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Card No",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "member_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Member Name"
+   "label": "Member Name",
+   "reqd": 1
   },
   {
    "fieldname": "father_husband",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Father / Husband Name"
+   "label": "Father's Name",
+   "reqd": 1
   },
   {
    "fieldname": "khundi",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Khundi",
-   "options": "Khundi"
+   "label": "Khundi-Group",
+   "options": "Khundi",
+   "reqd": 1
   },
   {
    "fieldname": "group",
@@ -74,7 +83,9 @@
   {
    "fieldname": "photo",
    "fieldtype": "Attach Image",
-   "label": "Photo"
+   "in_preview": 1,
+   "label": "Photo",
+   "print_hide": 1
   },
   {
    "fieldname": "gender",
@@ -119,22 +130,48 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Member Form",
+   "options": "Active Voter List",
    "print_hide": 1,
    "read_only": 1
   },
   {
    "fieldname": "column_break_j6lzj",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "booth",
+   "fieldtype": "Int",
+   "label": "Booth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "page",
+   "fieldtype": "Int",
+   "label": "Page",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vote_no",
+   "fieldtype": "Int",
+   "label": "Vote No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grand_father_name",
+   "fieldtype": "Data",
+   "label": "GRAND FATHER NAME",
+   "reqd": 1
   }
  ],
+ "image_field": "photo",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-26 23:37:27.255275",
+ "make_attachments_public": 1,
+ "modified": "2023-08-27 15:37:46.527596",
  "modified_by": "Administrator",
  "module": "ems",
- "name": "Member Form",
+ "name": "Active Voter List",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

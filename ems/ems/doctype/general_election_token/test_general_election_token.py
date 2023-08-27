@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestMemberForm(FrappeTestCase):
+class TestGeneralElectionToken(FrappeTestCase):
 	pass
