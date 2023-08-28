@@ -38,6 +38,7 @@
    "options": "Event Form"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "attendance",
    "fieldtype": "Check",
@@ -64,7 +65,8 @@
    "fieldname": "card_no",
    "fieldtype": "Link",
    "label": "Card No",
-   "options": "Active Voter List"
+   "options": "Active Voter List",
+   "unique": 1
   },
   {
    "fieldname": "column_break_th3tx",
@@ -98,7 +100,8 @@
    "fieldname": "member_no",
    "fieldtype": "Data",
    "label": "Member No",
-   "read_only": 1
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "father_husband",
@@ -154,7 +157,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-28 22:17:57.764616",
+ "modified": "2023-08-29 01:00:38.027640",
  "modified_by": "Administrator",
  "module": "ems",
  "name": "General Election Token",

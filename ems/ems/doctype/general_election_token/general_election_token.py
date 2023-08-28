@@ -18,6 +18,14 @@ def get_active_voter_details(**args):
         FROM `tabActive Voter List`
         WHERE name = %s
     """
+    attendance = """
+        SELECT attendance
+        FROM `tabGeneral Election Token`
+        WHERE card_no = %s
+    """
 
     results = frappe.db.sql(sql_query, (args.get('card_no'),), as_dict=True)
+    attendance_result = frappe.db.sql(attendance, (args.get('card_no'),), as_dict=True)
+    if attendance_result:
+        results[0].update(attendance_result[0])
     return results
