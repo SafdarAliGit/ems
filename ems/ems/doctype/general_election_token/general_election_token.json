@@ -8,12 +8,27 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "event",
-  "column_break_bmmue",
-  "card_no",
   "attendance",
+  "column_break_th3tx",
   "date_time",
-  "amended_from"
+  "column_break_jicsx",
+  "event",
+  "column_break_cxszr",
+  "card_no",
+  "amended_from",
+  "section_break_zv5le",
+  "member_name",
+  "member_no",
+  "father_husband",
+  "grand_father_name",
+  "khundi",
+  "column_break_lcrcs",
+  "photo",
+  "booth",
+  "page",
+  "vote_no",
+  "column_break_jle2y",
+  "photo_display"
  ],
  "fields": [
   {
@@ -26,15 +41,15 @@
    "default": "0",
    "fieldname": "attendance",
    "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Attendance"
+   "label": "Attendance",
+   "read_only": 1
   },
   {
    "default": "Now",
    "fieldname": "date_time",
    "fieldtype": "Datetime",
-   "hidden": 1,
-   "label": "Date Time"
+   "label": "Date Time",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -52,14 +67,94 @@
    "options": "Active Voter List"
   },
   {
-   "fieldname": "column_break_bmmue",
+   "fieldname": "column_break_th3tx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jicsx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cxszr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zv5le",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "member_no",
+   "fieldtype": "Data",
+   "label": "Member No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "father_husband",
+   "fieldtype": "Data",
+   "label": "Father's Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_father_name",
+   "fieldtype": "Data",
+   "label": "Grand Father's Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "khundi",
+   "fieldtype": "Link",
+   "label": "Khundi-Group",
+   "options": "Khundi",
+   "read_only": 1
+  },
+  {
+   "fieldname": "booth",
+   "fieldtype": "Int",
+   "label": "Booth",
+   "read_only": 1
+  },
+  {
+   "fieldname": "page",
+   "fieldtype": "Data",
+   "label": "Page",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vote_no",
+   "fieldtype": "Int",
+   "label": "Vote No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lcrcs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jle2y",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo_display",
+   "fieldtype": "HTML",
+   "label": "Photo"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-27 15:38:51.206993",
+ "modified": "2023-08-28 21:38:36.334258",
  "modified_by": "Administrator",
  "module": "ems",
  "name": "General Election Token",

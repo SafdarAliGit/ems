@@ -3,94 +3,49 @@
 
 frappe.ui.form.on('General Election Token', {
     card_no: function (frm) {
-        frappe.call({
-            method: "ems.ems.doctype.general_election_token.general_election_token.get_active_voter_details",
-            args: {
-                card_no: frm.doc.card_no
-            },
-            callback: function (response) {
-                var voter_details = response.message;
-                if (voter_details && voter_details.length > 0) {
 
-                function createTableHTML(data) {
-                    var tableHTML = `
-        <table class="table table-bordered">
-        
-            <tbody>
-    `;
+        if (frm.doc.card_no) {
+            frappe.call({
+                method: "ems.ems.doctype.general_election_token.general_election_token.get_active_voter_details",
+                args: {
+                    card_no: frm.doc.card_no
+                },
+                callback: function (response) {
+                    var voter_details = response.message;
+
+                    if (voter_details && voter_details.length > 0) {
 
 
-                    tableHTML += `
-            <tr>
-                <td>Photo</td>
-                <td><img src="${data[0].photo}" alt="" style="width: 200px;height: 250px;"></td>
-            </tr>
-            <tr>
-                <td>Member Name</td>
-                <td>${data[0].member_name}</td>
-            </tr>
-            <tr>
-                <td>Card No</td>
-                <td>${data[0].card_no}</td>
-            </tr>
-            <tr>
-                <td>Member No</td>
-                <td>${data[0].member_no}</td>
-            </tr>
-             <tr>
-                <td>Father's Name</td>
-                <td>${data[0].father_husband}</td>
-            </tr> 
-            <tr>
-                <td>Grand Father's Name</td>
-                <td>${data[0].grand_father_name}</td>
-            </tr>
-            <tr>
-                <td>Khundi-Group</td>
-                <td>${data[0].khundi}</td>
-            </tr>
-            <tr>
-                <td>Booth</td>
-                <td>${data[0].booth}</td>
-            </tr> 
-            <tr>
-                <td>Page</td>
-                <td>${data[0].page}</td>
-            </tr>
-            <tr>
-                <td>Vote No</td>
-                <td>${data[0].vote_no}</td>
-            </tr>
-        `;
+                        frm.set_value('photo', voter_details[0].photo);
+                        frm.set_value('member_no', voter_details[0].member_no);
+                        frm.set_value('member_name', voter_details[0].member_name);
+                        frm.set_value('father_husband', voter_details[0].father_husband);
+                        frm.set_value('grand_father_name', voter_details[0].grand_father_name);
+                        frm.set_value('khundi', voter_details[0].khundi);
+                        frm.set_value('booth', voter_details[0].booth);
+                        frm.set_value('page', voter_details[0].page);
+                        frm.set_value('vote_no', voter_details[0].vote_no);
 
+                        frm.fields_dict['photo_display'].$wrapper.html(
+                            `<img src="${voter_details[0].photo}" alt="Image">`
+                        );
 
-                    tableHTML += `
-            </tbody>
-        </table>
-    `;
-
-                    return tableHTML;
+                    } else {
+                        frappe.throw(`No voter details found under card no: ${frm.doc.card_no} .`);
+                    }
                 }
-
-
-                var formSectionDiv = document.querySelector('.form-section');
-                var existingResponseTable = formSectionDiv.nextElementSibling;
-                if (existingResponseTable && existingResponseTable.id === 'responseTable') {
-                    existingResponseTable.remove();
-                }
-
-                var responseTableHTML = createTableHTML(voter_details);
-                var tempElement = document.createElement('div');
-                tempElement.id = 'responseTable';
-                tempElement.innerHTML = responseTableHTML;
-                formSectionDiv.insertAdjacentElement('afterend', tempElement);
-
-
-                } else {
-                    frappe.throw(`No voter details found under card no: ${frm.doc.card_no} .`);
-                }
-            }
-        });
+            });
+        }
+    },
+     refresh: function(frm) {
+        if (frm.doc.photo) {
+            // Image field has a value, display the image
+            frm.fields_dict['photo_display'].$wrapper.html(
+                `<img src="${frm.doc.photo}" alt="Image">`
+            );
+        } else {
+            // Clear the HTML field content when no image is present
+            frm.fields_dict['photo_display'].$wrapper.empty();
+        }
     }
-
 });
