@@ -9,7 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "attendance",
-  "column_break_th3tx",
+  "column_break_juz1s",
   "date_time",
   "column_break_jicsx",
   "event",
@@ -28,10 +28,12 @@
   "page",
   "vote_no",
   "column_break_jle2y",
-  "photo_display"
+  "photo_display",
+  "cnic"
  ],
  "fields": [
   {
+   "default": "General Election 23-25",
    "fieldname": "event",
    "fieldtype": "Link",
    "label": "Event",
@@ -63,14 +65,10 @@
   },
   {
    "fieldname": "card_no",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Card No",
-   "options": "Active Voter List",
+   "options": " ",
    "unique": 1
-  },
-  {
-   "fieldname": "column_break_th3tx",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_jicsx",
@@ -151,13 +149,24 @@
   {
    "fieldname": "photo_display",
    "fieldtype": "HTML",
-   "label": "Photo"
+   "label": "Photo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_juz1s",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-29 01:00:38.027640",
+ "modified": "2023-09-06 22:58:59.791828",
  "modified_by": "Administrator",
  "module": "ems",
  "name": "General Election Token",
