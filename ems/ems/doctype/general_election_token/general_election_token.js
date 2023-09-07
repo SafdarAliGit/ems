@@ -1,6 +1,16 @@
 // Copyright (c) 2023, Tech Ventures and contributors
 // For license information, please see license.txt
+// Disable F12 key
+document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 123) {
+        e.preventDefault();
+    }
+});
 
+// Disable context menu
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
 frappe.ui.form.on('General Election Token', {
 
     // card_no: function (frm) {
@@ -91,7 +101,7 @@ frappe.ui.form.on('General Election Token', {
                                 }
                             }
 
-                            if (voter_details && voter_details.length > 0) {
+                            if (voter_details) {
 
                                 if (voter_details[0].attendance) {
 
@@ -138,7 +148,11 @@ frappe.ui.form.on('General Election Token', {
 
                                     var new_doc = frappe.model.get_new_doc('General Election Token');
                                     frappe.set_route('Form', 'General Election Token', new_doc.name);
-                    
+
+
+                                } else if (voter_details[0].cn) {
+                                    var doc = frappe.model.get_doc('General Election Token', voter_details[0].cn);
+                                    frappe.set_route('Form', 'General Election Token', doc.name);
 
                                 } else {
 
@@ -151,6 +165,7 @@ frappe.ui.form.on('General Election Token', {
                                     frm.set_value('booth', voter_details[0].booth);
                                     frm.set_value('page', voter_details[0].page);
                                     frm.set_value('vote_no', voter_details[0].vote_no);
+                                    frm.set_value('cnic', voter_details[0].cnic);
                                     frm.set_value('attendance', voter_details[0].attendance | 0);
 
                                     frm.fields_dict['photo_display'].$wrapper.html(
