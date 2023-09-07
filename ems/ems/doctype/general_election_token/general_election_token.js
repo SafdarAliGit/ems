@@ -1,16 +1,16 @@
 // Copyright (c) 2023, Tech Ventures and contributors
 // For license information, please see license.txt
 // Disable F12 key
-document.addEventListener("keydown", function(e) {
-    if (e.keyCode == 123) {
-        e.preventDefault();
-    }
-});
-
-// Disable context menu
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
+// document.addEventListener("keydown", function(e) {
+//     if (e.keyCode == 123) {
+//         e.preventDefault();
+//     }
+// });
+//
+// // Disable context menu
+// document.addEventListener("contextmenu", function(e) {
+//     e.preventDefault();
+// });
 frappe.ui.form.on('General Election Token', {
 
     // card_no: function (frm) {
@@ -151,8 +151,7 @@ frappe.ui.form.on('General Election Token', {
 
 
                                 } else if (voter_details[0].cn) {
-                                    var doc = frappe.model.get_doc('General Election Token', voter_details[0].cn);
-                                    frappe.set_route('Form', 'General Election Token', doc.name);
+                                    frappe.set_route("/app/general-election-token/"+ voter_details[0].cn);
 
                                 } else {
 
